@@ -510,6 +510,6 @@
     <value>FromSqlRaw or FromSqlInterpolated was called with non-composable SQL and with a query composing over it. Consider calling `AsEnumerable` after the FromSqlRaw or FromSqlInterpolated method to perform the composition on the client side.</value>
   </data>
   <data name="NestedAmbientTransactionError" xml:space="preserve">
-    <value>Internal ambient transaction is to be completed prior to the root one.</value>
+    <value>Root ambient transaction was completed before the nested transaction. The more nested transactions should be completed first.</value>
   </data>
 </root>

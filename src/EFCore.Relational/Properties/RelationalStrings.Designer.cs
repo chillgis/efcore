@@ -491,13 +491,13 @@ namespace Microsoft.EntityFrameworkCore.Diagnostics
         /// <summary>
         ///     Queryable Db Functions used in projections cannot return IQueryable.  IQueryable must be converted to a collection type such as List or Array.
         /// </summary>
-        public static string DbFunctionCantProjectIQueryable()
+        public static string DbFunctionCantProjectIQueryable
             => GetString("DbFunctionCantProjectIQueryable");
 
         /// <summary>
         ///     Return type of a queryable function '{functionName}' which is used in a projected collection must define a primary key.
         /// </summary>
-        public static string DbFunctionProjectedCollectionMustHavePK([CanBeNull] string functionName)
+        public static string DbFunctionProjectedCollectionMustHavePK([CanBeNull] object functionName)
             => string.Format(
                 GetString("DbFunctionProjectedCollectionMustHavePK", nameof(functionName)),
                 functionName);
@@ -613,7 +613,7 @@ namespace Microsoft.EntityFrameworkCore.Diagnostics
             => GetString("FromSqlNonComposable");
 
         /// <summary>
-        ///     Internal ambient transaction is to be completed prior to the root one.
+        ///     Root ambient transaction was completed before the nested transaction. The more nested transactions should be completed first.
         /// </summary>
         public static string NestedAmbientTransactionError
             => GetString("NestedAmbientTransactionError");
